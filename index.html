@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Donasi</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#c70851;
+}
+
+header{
+    background:#0d11fd;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+header h1{
+    margin-bottom:10px;
+}
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h2{
+    color:#333;
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#666;
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    background:#28a745;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#218838;
+}
+
+#rekening{
+    display:none;
+    margin-top:40px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.rekening-info{
+    font-size:20px;
+    color:#0d6efd;
+    margin:15px 0;
+    font-weight:bold;
+}
+
+footer{
+    margin-top:50px;
+    text-align:center;
+    padding:20px;
+    background:#0d6efd;
+    color:white;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>🤝 Program Donasi Peduli Sesama</h1>
+    <p>Mari berbagi untuk masa depan yang lebih baik</p>
+</header>
+
+<div class="container">
+
+<div class="cards">
+
+    <!-- Pendidikan -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800" alt="Pendidikan">
+        <div class="card-content">
+            <h2>📚 Donasi Pendidikan</h2>
+            <p>
+                Membantu anak-anak mendapatkan akses pendidikan,
+                buku pelajaran, perlengkapan sekolah dan beasiswa.
+            </p>
+
+            <button class="btn"
+            onclick="showRekening('Donasi Pendidikan')">
+            Donasi Sekarang
+            </button>
+        </div>
+    </div>
+
+    <!-- Anak Yatim -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800" alt="Anak Yatim">
+        <div class="card-content">
+            <h2>👦 Donasi Anak Yatim/Piatu</h2>
+            <p>
+                Membantu kebutuhan hidup, pendidikan,
+                kesehatan dan masa depan anak yatim/piatu.
+            </p>
+
+            <button class="btn"
+            onclick="showRekening('Donasi Anak Yatim/Piatu')">
+            Donasi Sekarang
+            </button>
+        </div>
+    </div>
+
+    <div class="card">
+    <img src="bencana13.jpg" alt="Donasi Korban Bencana">
+
+    <div class="card-content">
+        <h2>🌏 Donasi Korban Bencana</h2>
+
+        <p>
+            Bantuan untuk korban gempa bumi, banjir,
+            tanah longsor, tsunami, dan bencana alam lainnya.
+        </p>
+
+        <button class="btn"
+        onclick="showRekening('Donasi Korban Bencana')">
+            ❤️ Donasi Sekarang
+        </button>
+
+    </div>
+</div>
+
+<!-- Rekening Tujuan -->
+<div id="rekening">
+
+    <h2 id="judulDonasi"></h2>
+
+    <p>Silakan transfer donasi Anda ke rekening berikut:</p>
+
+    <div class="rekening-info">
+        Bank BCA<br>
+        088905212<br>
+        a.n ber13agi
+    </div>
+
+    <button class="btn" onclick="terimaKasih()">
+        Saya Sudah Donasi
+    </button>
+
+</div>
+
+</div>
+
+<footer>
+    © 2026 Yayasan 13 berbagi (Ber13agi)
+</footer>
+
+<script>
+
+function showRekening(kategori){
+
+    document.getElementById("rekening").style.display="block";
+
+    document.getElementById("judulDonasi").innerHTML=
+    "❤️ "+kategori;
+
+    document.getElementById("rekening")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+function terimaKasih(){
+
+    document.body.innerHTML=`
+
+    <div style="
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f5f7fa;">
+
+    <div style="
+    max-width:600px;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);">
+
+        <h1 style="color:#28a745;">
+        🎉 Terima Kasih
+        </h1>
+
+        <p style="
+        margin-top:20px;
+        font-size:18px;
+        line-height:1.8;">
+        Kami mengucapkan terima kasih atas donasi yang telah Anda berikan.
+        Bantuan Anda sangat berarti bagi mereka yang membutuhkan.
+        Semoga kebaikan Anda dibalas dengan keberkahan dan kesehatan selalu.
+        ❤️
+        </p>
+
+        <br>
+
+        <a href=""
+        style="
+        background:#0d6efd;
+        color:white;
+        padding:12px 25px;
+        text-decoration:none;
+        border-radius:8px;">
+        Kembali ke Beranda
+        </a>
+
+    </div>
+
+    </div>
+    `;
+}
+
+</script>
+
+</body>
+</html>
